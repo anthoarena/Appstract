@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AcmeInfrastructure.Interfaces {
     public interface IContest {
-        ContestantDTO NewContestant(ContestantRequestDTO contestant);
+        bool NewContestant(ContestantRequestDTO contestant);
         IEnumerable<ContestantDTO> AllContestant();
     }
 }
