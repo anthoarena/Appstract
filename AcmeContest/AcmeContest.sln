@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeWebAPI", "AcmeWebAPI\AcmeWebAPI.csproj", "{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCore", "AcmeCore\AcmeCore.csproj", "{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeInfrastructure", "AcmeInfrastructure\AcmeInfrastructure.csproj", "{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
