@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeInfrastructure", "AcmeI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestAcme", "UnitTestAcme\UnitTestAcme.csproj", "{D54B60CA-8496-40BE-82A1-23200FBE157C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeInitTool", "AcmeInitTool\AcmeInitTool.csproj", "{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D54B60CA-8496-40BE-82A1-23200FBE157C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54B60CA-8496-40BE-82A1-23200FBE157C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54B60CA-8496-40BE-82A1-23200FBE157C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
