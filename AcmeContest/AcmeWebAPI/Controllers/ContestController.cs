@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AcmeInfrastructure.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,9 +13,12 @@ namespace AcmeWebAPI.Controllers {
     public class ContestController : ControllerBase {
 
         private readonly ILogger<ContestController> _logger;
+        private readonly IContest _repo;
 
-        public ContestController(ILogger<ContestController> logger) {
+        public ContestController(ILogger<ContestController> logger, IContest repo) {
             _logger = logger;
+            _repo = repo;
         }
+
     }
 }

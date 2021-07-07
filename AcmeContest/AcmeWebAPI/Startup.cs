@@ -1,4 +1,6 @@
 using AcmeCore.Model;
+using AcmeCore.Repository;
+using AcmeInfrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,11 +27,13 @@ namespace AcmeWebAPI {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
 
+            services.AddScoped<AcmeContext>();
             services.AddControllers();
 
             services.AddDbContext<AcmeContext>(opts => opts.UseSqlServer("Data Source=ZEN\\SQLEXPRESS;Initial Catalog=acmedatabase;Integrated Security=True"));
 
-            services.AddScoped<AcmeContext>();
+            services.AddScoped<IContest, ContestService>();
+
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AcmeWebAPI", Version = "v1" });
             });
