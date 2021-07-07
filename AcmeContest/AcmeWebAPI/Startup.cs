@@ -1,7 +1,9 @@
+using AcmeCore.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,10 @@ namespace AcmeWebAPI {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
+
+            services.AddDbContext<AcmeContext>(opts => opts.UseSqlServer("Data Source=ZEN\\SQLEXPRESS;Initial Catalog=acmedatabase;Integrated Security=True"));
+
+            services.AddScoped<AcmeContext>();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AcmeWebAPI", Version = "v1" });
             });
