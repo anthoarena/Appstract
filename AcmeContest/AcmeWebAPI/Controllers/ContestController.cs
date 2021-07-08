@@ -1,6 +1,7 @@
 ﻿using AcmeInfrastructure.DTO;
 using AcmeInfrastructure.DTO.Wrapper;
 using AcmeInfrastructure.Interfaces;
+using AcmeWebAPI.Validation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -34,17 +35,43 @@ namespace AcmeWebAPI.Controllers {
         [Route("contestant")]
         [HttpPost]
         public IActionResult NewContestant([FromBody] ContestantRequestDTO contestant) {
-            try {             
+            try {
+                var response = new Response<ContestantDTO>();
+
+                #region validation
+                var contestants = _repo.AllContestant();
+                var products = _repo.AllProducts();
+
+                if (products == null || contestants == null)
+                    return BadRequest("Error requesting the contest contestants and products, please try again");
+
+                if (products.Count() == 0 || contestants.Count() == 0)
+                    return BadRequest("Error no products or contestants are existing, please add contestant and product to the contest.");
+
+                response = RequestValidation.ValidateDrawRequest(contestant, contestants.ToList(), products.ToList());
+                #endregion
+
+                // If the request failed return the errors
+                if (!response.Succeeded)
+                    return BadRequest(response);
+
                 bool created = _repo.NewContestant(contestant);
-                if (!created) 
+
+                // if the contestant has not been created
+                if (!created)
                     return BadRequest("Contestant not created");
-                               
+
                 return Ok();
+
             }
-            catch (Exception) {
+            catch (Exception e) {
+                _logger.Log(LogLevel.Error, "NewContestant : " + e.Message);
                 return StatusCode(500);
             }
+
         }
+
+
 
         /// <summary>
         /// Return all contest's participants with their info 
@@ -62,11 +89,10 @@ namespace AcmeWebAPI.Controllers {
 
                 return Ok(pagedData);
             }
-            catch(Exception) {
-                _logger.Log(LogLevel.Error, "GetAllContestant");
+            catch (Exception e) {
+                _logger.Log(LogLevel.Error, "GetAllContestant : " + e.Message);
                 return BadRequest("An error has occured please try again");
             }
-       
         }
 
     }
