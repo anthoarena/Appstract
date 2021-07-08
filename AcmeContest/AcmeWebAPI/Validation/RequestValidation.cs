@@ -56,7 +56,7 @@ namespace AcmeWebAPI.Validation {
                 return response;
             }
             else {
-                response.Message = "OK";
+                response.Message = "Success";
                 response.StatusCode = 200;
                 response.Succeeded = true;
                 response.Data = new ContestantDTO { Firstname = contestant.Firstname, Lastname = contestant.Lastname, Email = contestant.Email, SerialNumber = contestant.SerialNumber };

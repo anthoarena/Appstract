@@ -29,7 +29,7 @@ namespace AcmeCore.ApiValidation {
         /// <returns></returns>
         public static bool HasValidNummerOfParticipation(int numberOfParticipation) {
             int max = 2;
-            return max <= numberOfParticipation;
+            return max > numberOfParticipation;
         }
     }
 }

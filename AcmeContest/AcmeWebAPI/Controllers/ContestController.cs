@@ -61,7 +61,7 @@ namespace AcmeWebAPI.Controllers {
                 if (!created)
                     return BadRequest("Contestant not created");
 
-                return Ok();
+                return Ok(response);
 
             }
             catch (Exception e) {

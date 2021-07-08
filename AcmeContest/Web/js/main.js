@@ -2,7 +2,7 @@
 let yourUrl = "https://localhost:44374/api/Contest/contestant";
 let page;
 
-function ShowValues(first, last, email, sn) {
+function CreateContestant(first, last, email, sn, birthdate) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", yourUrl, true);
@@ -14,9 +14,19 @@ function ShowValues(first, last, email, sn) {
         firstname: first.value,
         lastname: last.value,
         email: email.value,
-        serialNumber: sn.value
+        serialNumber: sn.value,
+        birthdate: birthdate.value
     }));
-    alert(first.value + " " + last.value + " " + email.value + " " + sn.value);
+
+    
+    xhr.onload = function () {
+        var jsonResponse = JSON.parse(xhr.responseText);
+        if (JSON.stringify(jsonResponse.errors).length == 0)
+            alert(JSON.stringify(jsonResponse.errors));
+        else
+            alert(jsonResponse.message);
+    };
+
 }
 
 function AllParticipants() {
