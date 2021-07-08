@@ -44,9 +44,9 @@ namespace AcmeCore.ApiValidation {
         /// <param name="birthdate"></param>
         /// <returns>an error message if not valid or an empty string </returns>
         public static string ValidateBirthdate(DateTime birthdate) {
-            if (birthdate > new DateTime(1920, 1, 1))
+            if (birthdate < new DateTime(1920, 1, 1))
                 return "Error with birthdate, over 100 years old.";
-            return String.Empty;
+            return string.Empty;
         }
 
         /// <summary>
