@@ -1,4 +1,5 @@
 ﻿using AcmeInfrastructure.DTO;
+using AcmeInfrastructure.DTO.Wrapper;
 using AcmeInfrastructure.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -52,19 +53,20 @@ namespace AcmeWebAPI.Controllers {
         /// <returns></returns>
         [Route("contestant")]
         [HttpGet]
-        public IActionResult GetAllContestants() {
+        public IActionResult GetAllContestants([FromQuery] PaginationFilter filter) {
             try {
-                var response = _repo.AllContestant();
+                var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+                var pagedData = _repo.AllContestant()?
+                   .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+                   .Take(validFilter.PageSize).ToList();
 
-                if (response == null)
-                    return BadRequest("An error has occured please try again");
-                         
-                return Ok(response);
+                return Ok(pagedData);
             }
-            catch (Exception) {
-                return StatusCode(500);
+            catch(Exception) {
+                _logger.Log(LogLevel.Error, "GetAllContestant");
+                return BadRequest("An error has occured please try again");
             }
-         
+       
         }
 
     }
