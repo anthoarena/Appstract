@@ -29,6 +29,14 @@ namespace AcmeWebAPI {
 
             services.AddScoped<AcmeContext>();
             services.AddControllers();
+            services.AddCors(options => {
+                options.AddPolicy("WildCors",
+                    builder => {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
 
             services.AddDbContext<AcmeContext>(opts => opts.UseSqlServer("Data Source=ZEN\\SQLEXPRESS;Initial Catalog=acmedatabase;Integrated Security=True"));
 
@@ -52,7 +60,7 @@ namespace AcmeWebAPI {
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("WildCors");
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });

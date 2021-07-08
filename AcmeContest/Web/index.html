@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Acme Corporation Contest</title>
+    <meta name="description" content="Contest for Acme customers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>ACME DRAW CONTEST</h1>
+
+    <section>
+        <p>
+            <label>
+                First Name
+                <input id="first" name="first" type="text">
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Last Name
+                <input id="last" name="last" type="text">
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Email
+                <input id="email" name="email" type="text">
+            </label>
+        </p>
+        <p>
+            <label>
+                Serial Number
+                <input id="sn" name="sn" type="text">
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input type="button" value="Submit" onclick="ShowValues(first, last, email, sn);">
+            </label>
+        </p>
+    </section>
+
+    <section>
+        <input type="button" value="Draw" onclick="AllParticipants()">
+        <input type="button" value=">" onclick="NextPage()">
+        <input type="button" value="<" onclick="PreviousPage()">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>SerialNumber</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

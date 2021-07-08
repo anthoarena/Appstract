@@ -83,11 +83,20 @@ namespace AcmeWebAPI.Controllers {
         public IActionResult GetAllContestants([FromQuery] PaginationFilter filter) {
             try {
                 var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
-                var pagedData = _repo.AllContestant()?
+                var pagedData = _repo.AllContestant();
+
+                if (pagedData == null)
+                    return BadRequest("Request has failed please try again");
+
+                var paged=   pagedData 
                    .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
                    .Take(validFilter.PageSize).ToList();
 
-                return Ok(pagedData);
+                if(paged.Count() == 0) {
+                    return Ok(pagedData.Take(10).ToList());            
+                }
+
+                return Ok(paged);
             }
             catch (Exception e) {
                 _logger.Log(LogLevel.Error, "GetAllContestant : " + e.Message);

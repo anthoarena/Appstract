@@ -3,15 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeWebAPI", "AcmeWebAPI\AcmeWebAPI.csproj", "{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeWebAPI", "AcmeWebAPI\AcmeWebAPI.csproj", "{A98E9B64-8705-4BD3-80B0-1F58E60AC53E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCore", "AcmeCore\AcmeCore.csproj", "{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCore", "AcmeCore\AcmeCore.csproj", "{4819FF5F-8A4D-4A0A-8FA7-0745163AFB5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeInfrastructure", "AcmeInfrastructure\AcmeInfrastructure.csproj", "{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeInfrastructure", "AcmeInfrastructure\AcmeInfrastructure.csproj", "{5448C1A2-DC3F-4FF4-BEEE-72158FE807BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestAcme", "UnitTestAcme\UnitTestAcme.csproj", "{D54B60CA-8496-40BE-82A1-23200FBE157C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestAcme", "UnitTestAcme\UnitTestAcme.csproj", "{D54B60CA-8496-40BE-82A1-23200FBE157C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeInitTool", "AcmeInitTool\AcmeInitTool.csproj", "{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeInitTool", "AcmeInitTool\AcmeInitTool.csproj", "{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{58ABE909-F58E-4411-9337-45BFCBEFA47C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62843"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62843\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62843"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62843\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62843"
+		SlnRelativePath = "Web\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +60,10 @@ Global
 		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8049AC-CE7D-4BB9-8EA8-5AE58B72C25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58ABE909-F58E-4411-9337-45BFCBEFA47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58ABE909-F58E-4411-9337-45BFCBEFA47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58ABE909-F58E-4411-9337-45BFCBEFA47C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{58ABE909-F58E-4411-9337-45BFCBEFA47C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
